@@ -1,4 +1,4 @@
-import random
+import random as r
 from urllib.request import urlopen
 import sys
 
@@ -37,18 +37,17 @@ def convert(snippet, phrase):
 	for sentence in snippet, phrase:
 		result = sentence[:]
 
-# fake class names
+		# fake class names
 		for word in class_names:
 			result = result.replace("%%%", word, 1)
 
-	# fake other names
+		# fake other names
 		for word in other_names:
 			result = result.replace("***", word, 1)
-	# fake parameter lists
+		# fake parameter lists
 		for word in param_names:
 			result = result.replace("@@@", word, 1)
-
-			results.append(result)
+		results.append(result)
 	return results
 
 
